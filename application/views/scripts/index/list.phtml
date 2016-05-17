@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="<?=$this->baseUrl()?>/css/bootstrap.css"/>
+<br><br><br>
+<div class="col-sm-offset-2 col-sm-8">
+	<a href="<?=$this->baseUrl();?>/index">
+<input type='button' class='btn btn-success' value='Show Feeds'> <br><br>
+</a>
+<?php
+echo $this->form;
+?>
+<br><br><br><br>
+<table class="table table-hover">
+	<tr>
+		<th>path</th>
+		<th>action</th>
+	</tr>
+	<?php
+		foreach ($this->paths as $path )
+		{
+	?>
+			<tr>
+				<td>
+					<?= $path['path'] ?>
+				</td>
+				<td>
+					<a href="<?=$this->baseUrl();?>/index/delete/id/<?=$path['id']?>">DELETE</a>
+				</td>
+			</tr>
+	<?php		
+		}
+	?>
+</table>
+</div>
+
+

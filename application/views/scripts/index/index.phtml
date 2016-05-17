@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="<?=$this->baseUrl()?>/css/bootstrap.css"/>
+<br><br><br>
+
+<div class="col-sm-offset-2 col-sm-8">
+	<a href="<?=$this->baseUrl();?>/index/list">
+<input type='button' class='btn btn-success' value='Add New RSS feed url'> <br><br>
+</a>
+<?php
+	foreach ($this->RSSs as $rss) 
+	{
+		foreach ($rss as $path)
+		 {
+
+?>
+		<div class="well">
+			<a href="<?= $rss->link; ?>"><?= $path->title; ?></a>
+			<br>
+			Posted: <?= $path->pubDate; ?>
+			<br>
+			<?= $path->description; ?>
+		</div>			
+		<br>
+<?php
+}
+	}
+?>
+
+</div>
